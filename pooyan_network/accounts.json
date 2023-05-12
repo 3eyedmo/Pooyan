@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "c5d219ce-b5db-4753-a1d9-2e96e1cf959e",
+		"name": "Accounts Service Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16186124",
+		"_collection_link": "https://speeding-crescent-491061.postman.co/workspace/pooyan~68fe1aa5-a7d1-4613-ac9f-57627987d3e6/collection/16186124-c5d219ce-b5db-4753-a1d9-2e96e1cf959e?source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mohammad4030\",\r\n    \"password1\": \"mohammad4030\",\r\n    \"password2\": \"mohammad4030\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseAccountsUrl}}/create_user/",
+					"host": [
+						"{{baseAccountsUrl}}"
+					],
+					"path": [
+						"create_user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Pair",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mohammad4030\",\r\n    \"password\": \"mohammad4030\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseAccountsUrl}}/token_pair/",
+					"host": [
+						"{{baseAccountsUrl}}"
+					],
+					"path": [
+						"token_pair",
+						""
+					]
+				},
+				"description": "Create refresh and access token for specefic user."
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNTQ0NzAxMiwiaWF0IjoxNjgzOTExMDEyLCJqdGkiOiIyZTIyNmIzMjE4NWU0MjBhYmJkNDc3MzdmODkyOWY1MyIsInVzZXJfaWQiOiI2NDVlNjA0MTc0MGM0YzUwYjI0OWI2MzMiLCJ1c2VybmFtZSI6Im1vaGFtbWFkNDAzMCJ9.k20nOyhsotcwjsIh0ZtrrR0Hg8OTojAyHLYm-GvSrjg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseAccountsUrl}}/access_token/",
+					"host": [
+						"{{baseAccountsUrl}}"
+					],
+					"path": [
+						"access_token",
+						""
+					]
+				},
+				"description": "Create Access Toeken using Refresh Token."
+			},
+			"response": []
+		},
+		{
+			"name": "Token Verification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0Nzc2MzQ0LCJpYXQiOjE2ODM5MTEwMTIsImp0aSI6IjYyMGNlMzc0OTAxODRiYjNiM2Q1ODIzNjg0OWI5YThmIiwidXNlcl9pZCI6IjY0NWU2MDQxNzQwYzRjNTBiMjQ5YjYzMyIsInVzZXJuYW1lIjoibW9oYW1tYWQ0MDMwIn0.-32mfFJ6RZIz4cP4MP5Yl7UFiz9lQpVOe0GrUj7MLC0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseAccountsUrl}}/verify_token/",
+					"host": [
+						"{{baseAccountsUrl}}"
+					],
+					"path": [
+						"verify_token",
+						""
+					]
+				},
+				"description": "Validate Token no matter what type."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseAccountsUrl",
+			"value": "127.0.0.1:8000/api/accounts"
+		}
+	]
+}

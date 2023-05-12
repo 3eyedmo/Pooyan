@@ -1,0 +1,11 @@
+django==3.2.18
+djangorestframework==3.14.0
+
+# for documentation
+drf-yasg
+
+# odm for mongo
+mongoengine
+
+# for jwt
+djangorestframework-simplejwt

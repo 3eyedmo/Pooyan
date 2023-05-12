@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "ed4184a2-3f2a-4a68-a9a4-dc6c5bdf3a63",
+		"name": "Post Service Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16186124",
+		"_collection_link": "https://speeding-crescent-491061.postman.co/workspace/pooyan~68fe1aa5-a7d1-4613-ac9f-57627987d3e6/collection/16186124-ed4184a2-3f2a-4a68-a9a4-dc6c5bdf3a63?source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Creste Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Forth Title For User 4030\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/posts/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/posts/:userId/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"posts",
+						":userId",
+						""
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				},
+				"description": "List user posts by user id."
+			},
+			"response": []
+		},
+		{
+			"name": "Like Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/like/:postId/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"like",
+						":postId",
+						""
+					],
+					"variable": [
+						{
+							"key": "postId",
+							"value": "{{postId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unlike Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/unlike/:postId/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"unlike",
+						":postId",
+						""
+					],
+					"variable": [
+						{
+							"key": "postId",
+							"value": "{{postId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/like_list/:postId/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"like_list",
+						":postId",
+						""
+					],
+					"variable": [
+						{
+							"key": "postId",
+							"value": "{{postId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Third for post\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/comments/:postId/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"comments",
+						":postId",
+						""
+					],
+					"variable": [
+						{
+							"key": "postId",
+							"value": "{{postId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/comments/:postId/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"comments",
+						":postId",
+						""
+					],
+					"variable": [
+						{
+							"key": "postId",
+							"value": "{{postId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Reply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Second Reply Reply\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/replies/:comment_id/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"replies",
+						":comment_id",
+						""
+					],
+					"variable": [
+						{
+							"key": "comment_id",
+							"value": "{{commentId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Replies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{PostServiceBaseUrl}}/replies/:comment_id/",
+					"host": [
+						"{{PostServiceBaseUrl}}"
+					],
+					"path": [
+						"replies",
+						":comment_id",
+						""
+					],
+					"variable": [
+						{
+							"key": "comment_id",
+							"value": "{{commentId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PostServiceBaseUrl",
+			"value": "127.0.0.1:5000/api"
+		},
+		{
+			"key": "access_token",
+			"value": "-----",
+			"type": "string"
+		},
+		{
+			"key": "postId",
+			"value": "-----"
+		},
+		{
+			"key": "commentId",
+			"value": "-----"
+		},
+		{
+			"key": "userId",
+			"value": "-----"
+		}
+	]
+}
